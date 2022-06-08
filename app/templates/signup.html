@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Text Time | Sign Up{% endblock %}
+
+{% block content %}
+<h4>Please Sign Up</h4>
+<!-- Form will go here -->
+<form method="post">
+    {{ form.csrf_token }}
+    <div class="form-group">
+        {{ form.name.label }}
+        {{ form.name(class='form-control', placeholder='Enter Your Name') }}
+
+        {{ form.phone.label }}
+        {{ form.phone(class='form-control', placeholder='Enter Your Phone Number') }}
+
+        {{ form.address.label }}
+        {{ form.address(class='form-control', placeholder='Enter Your Address') }}
+
+        <!-- {{ form.confirm_pass.label }}
+        {{ form.confirm_pass(class='form-control', placeholder='Confirm Password') }} -->
+
+        {{ form.submit(class='btn btn-secondary w-100 mt-3') }}
+
+    </div>
+</form>
+{% endblock content %}
